@@ -12,10 +12,11 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [Key]
         public int CurrentAccountId { get; set; }
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+        [StringLength(30,ErrorMessage ="En Fazla 30 Karakter yazabilirsiniz")]
         public string CurrentAccountName { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
+        [Required(ErrorMessage ="Bu alanı boş geçemezsiniz!")]
         public string CurrentAccountSurname { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(20)]
@@ -23,6 +24,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
         public string CurrentAccountMail { get; set; }
+
+        public bool Status { get; set; }
 
         public ICollection<SalesTransactions> SalesTransactions { get; set; }
     }
