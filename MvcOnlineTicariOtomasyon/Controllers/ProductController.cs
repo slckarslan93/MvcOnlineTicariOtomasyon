@@ -62,10 +62,17 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             product.Categoryid = p.Categoryid;
             product.ProductBrand = p.ProductBrand;
             product.SellingPrice = p.SellingPrice;
+            product.Stock = p.Stock;
             product.ProductName = p.ProductName;
             product.ProductImage = p.ProductImage;
+            
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult productList()
+        {
+            var values = c.Products.ToList();
+            return View(values);
         }
     }
 }

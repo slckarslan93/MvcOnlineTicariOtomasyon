@@ -1,0 +1,32 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.Bills
+@{
+    ViewBag.Title = "addBills";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Fatura Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.BillSerialNo)
+    @Html.TextBoxFor(x => x.BillSerialNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BillOrderNo)
+    @Html.TextBoxFor(x => x.BillOrderNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BillDate)
+    @Html.TextBoxFor(x => x.BillDate, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Hour)
+    @Html.TextBoxFor(x => x.Hour, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Submitter)
+    @Html.TextBoxFor(x => x.Submitter, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Receiver)
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>
+

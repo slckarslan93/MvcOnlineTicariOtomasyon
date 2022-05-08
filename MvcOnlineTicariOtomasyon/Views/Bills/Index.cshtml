@@ -1,0 +1,59 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Classes
+@model List<Bills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Teslim eden</th>
+        <th>Teslim alan</th>
+        <th>Toplam</th>
+        <th>Güncelle</th>
+        <th>Teslim detaylar</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>
+                @k.BillsId
+            </td>
+            <td>
+                @k.BillSerialNo
+            </td>
+            <td>
+                @k.BillOrderNo
+            </td>
+            <td>
+                @k.TaxAdministration
+            </td>
+            <td>
+                @k.BillDate
+            </td>
+            <td>
+                @k.Hour
+            </td>
+            <td>
+                @k.Submitter
+            </td>
+            <td>
+                @k.Receiver
+            </td>
+            <td>
+                @k.Total
+            </td>
+            <td><a href="/Bills/getBills/@k.BillsId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Bills/detailBills/@k.BillsId" class="btn btn-success" style="background-color:lightcoral;color:white;">Detaylar</a></td>
+        </tr>
+    }
+
+
+</table>
+<a href="/Bills/addBills" class="btn btn-info">Yeni Fatura</a>

@@ -21,13 +21,17 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
         public string TaxAdministration { get; set; }
-        public DateTime Hour { get; set; }
+        [Column(TypeName = "Char")]
+        [StringLength(5)]
+        public string Hour { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Submitter { get; set; } //teslim eden
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Receiver { get; set; } //teslim alan
+
+        public decimal Total { get; set; }
         public ICollection<BillsItems> BillsItems { get; set; }
     }
 }

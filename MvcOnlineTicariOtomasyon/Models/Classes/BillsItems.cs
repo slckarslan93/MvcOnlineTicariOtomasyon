@@ -17,8 +17,8 @@ namespace MvcOnlineTicariOtomasyon.Models.Classes
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal Price { get; set; }
-
-        public Bills Bills { get; set; }
+        public int BillsId { get; set; }
+        public virtual Bills Bills { get; set; }
 
     }
 }
